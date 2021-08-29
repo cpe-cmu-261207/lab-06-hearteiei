@@ -3,14 +3,14 @@ import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 type resultType = {
+    bpi: Record<string,number>
+    disclaimer: string
     time: {
-        updated: string,
-        updatedISO: string,
-        updateduk: string
-    },
-    disclaimer: string,
-    bpi: Record<string, number> | null ;
-} 
+        updated: string
+        updatedISO: string
+    }
+}
+
 const HistoryResult = () => {
     const query = new URLSearchParams(useLocation().search)
     let startDate = query.get('start')
